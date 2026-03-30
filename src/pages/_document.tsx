@@ -1,8 +1,8 @@
-import { Html, Head, Main, NextScript } from "next/document";
-
+import { Html, Head, Main, NextScript } from 'next/document';
+//모든페이지에 공통으로 적용되는 설정
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="kr">
       <Head />
       <body>
         <Main />
