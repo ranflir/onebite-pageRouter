@@ -1,4 +1,6 @@
+import SearchableLayout from '@/components/searchable-layout';
 import style from './index.module.css';
+import { ReactNode } from 'react';
 
 export default function Home() {
   return (
@@ -8,6 +10,12 @@ export default function Home() {
     </>
   );
 }
+
+
+//함수도 객체라서 메소드를 추가할 수 있다.
+Home.getLayout = (page: ReactNode) => {
+  return <SearchableLayout>{page}</SearchableLayout>;
+};
 
 // import Head from 'next/head';
 // import Image from 'next/image';
