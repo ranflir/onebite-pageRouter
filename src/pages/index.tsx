@@ -29,7 +29,7 @@ Home.getLayout = (page: ReactNode) => {
 };
 
 /*
-React App 에서의 데이터 페칭
+기존 React App 에서의 데이터 페칭  : 초기 접속 요청부터 데이터 로딩까지 오랜 시간이 걸림
 
 export default function Page(){
 const [state, setState] = useState()  1. 불러온 데이터를 보관할 State 생성
@@ -41,11 +41,23 @@ const data = await response.json();
 setState(data);
 };
 
-useEffect(()=> {                      3. 컴포넌트 마우트 시점에 fetchData 호출
+useEffect(()=> {                      3. 컴포넌트 마우트 시점에 fetchData 호출 (! 데이터 요청 자체가 늦다)
 fetchData();
 }, []);
+
+if (!state) return "Loading ...";     4. 데이터 로딩중일때의 예외처리
 
 return <div>...</div>;
 }
 
+*/
+
+/*
+리액트 앱의 데이터 페칭
+컴포넌트 마운트 이후에 발생함
+데이터 요청 시점이 느려지게 되는 단점 발생
+
+넥스트 앱의 데이터 페칭
+사전 렌더링중 발생함 (당연히 컴포넌트 마운트 이후에도 발생 가능)
+데이터 요청 시점이 매우 빨라지는 장점 있음
 */
