@@ -4,8 +4,24 @@ import style from './index.module.css';
 import { ReactNode } from 'react';
 import books from '@/mock/books.json';
 import BookItem from '@/components/book-item';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
-export default function Home() {
+//서버사이드 방식으로 랜더링 된다 (ssr) 이것만하면?!
+//컴포넌트보다 먼저 실행되어서, 컴포넌트에 필요한 데이터 불러오는 함수
+export const getServerSideProps = () => {
+  //  이 함수는 서버측에서만 한번 실행됨
+
+  const data = 'hello';
+  return {
+    props: {
+      data,
+    },
+  };
+};
+export default function Home({
+  data,
+}: InferGetServerSidePropsType<GetServerSideProps>) {
+  console.log(data);
   return (
     <div className={style.container}>
       <section>
