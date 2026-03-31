@@ -12,6 +12,14 @@ const mockData = {
     "https://shopping-phinf.pstatic.net/main_3888828/38888282618.20230913071643.jpg",
 };
 
+
+export const getServerSideProps = async ()=> {
+  return {
+    props:{},
+  }
+}
+
+
 export default function Page() {
   const {
     id,
