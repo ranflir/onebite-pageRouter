@@ -1,4 +1,3 @@
-//api응답을 정의하는 파일
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
